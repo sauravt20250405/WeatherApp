@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="default">
+    <div class="weather-dashboard">
+        <!-- Search & Utility Controls -->
+        <div class="control-header">
+            <div class="input-group">
+                <input type="text" id="location-input" placeholder="Search City..." autocomplete="off">   
+                <input type="text" id="zip-input" placeholder="or PIN / ZIP Code..." autocomplete="off">
+                <button id="search-btn">Search</button>
+            </div>
+            <button id="geo-btn" class="geo-btn">📍 Use Current Location</button>
+        </div>
+        
+        <!-- Error Status Alert Area -->
+        <div id="error-message" class="error-message hidden">Location not found. Check format and try again!</div>
+
+        <!-- Master Interface Frame -->
+        <div id="weather-info" class="dashboard-grid hidden">
+            
+            <!-- Hero Core Module -->
+            <div class="card hero-card">
+                <div class="hero-main">
+                    <h2 id="city-name">--</h2>
+                    <h1 id="temperature">--°C</h1>
+                    <p id="description">--</p>
+                </div>
+                <img id="weather-icon" src="" alt="Condition icon">
+            </div>
+
+            <!-- MSN-Style Advanced Metric Grid -->
+            <div class="card metrics-panel">
+                <h3>Vitals & Conditions</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <label>Feels Like</label>
+                        <span id="feels-like">--</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Humidity</label>
+                        <span id="humidity">--</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Wind Speed</label>
+                        <span id="wind-speed">--</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>UV Index</label>
+                        <span id="uv-index">--</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Visibility</label>
+                        <span id="visibility">--</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>Pressure</label>
+                        <span id="pressure">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extended Multi-Day Horizon Forecast Frame -->
+            <div class="card forecast-panel">
+                <h3>3-Day Outlook Horizon</h3>
+                <div id="forecast-container" class="forecast-container"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
